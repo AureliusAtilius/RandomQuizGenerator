@@ -63,6 +63,9 @@ for quizNum in range(35):
     answerKeyFIle = open(f'capistalsquiz_answers{quizNum + 1}.txt','w')
 
     #TODO: Write out the header for the quiz.
+    quizNum.Write("Name:\n\nDate:\n\nPeriod\n\n")
+    quizNum.Write(" " *20) = f'State Capitals Quiz (Form{quizNum +1}.txt','w')
+    quizFile.Write("\n\n")
 
     #TODO: Shuffle the order of the states.
 
