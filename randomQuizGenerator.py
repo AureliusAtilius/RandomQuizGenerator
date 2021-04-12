@@ -60,7 +60,7 @@ capitals={
 for quizNum in range(35):
     # Create the quiz and answer key files.
     quizFile = open(f'capitalsquiz{quizNum + 1}.txt', 'w')
-    answerKeyFIle = open(f'capistalsquiz_answers{quizNum + 1}.txt','w')
+    answerKeyFile = open(f'capistalsquiz_answers{quizNum + 1}.txt','w')
 
     # Write out the header for the quiz.
     quizNum.Write("Name:\n\nDate:\n\nPeriod\n\n")
@@ -71,7 +71,7 @@ for quizNum in range(35):
     states = list(capitals.keys())
     random.shuffle(states)
 
-    #TODO: Loop through all 50 states, making a question for each.
+    # Loop through all 50 states, making a question for each.
     for questionNum in range(50):
 
         #Get right and wrong answers.
@@ -83,9 +83,17 @@ for quizNum in range(35):
         random.shuffle(answerOptions)
 
 
-        #TODO: Write the question and answer options to the quiz file.
+        # Write the question and answer options to the quiz file.
+        quizFile.write(f'{questionNum +1}. What is the capital of {states[questionNum]}?\n')
+        for i in range(4):
+            quizFile.write(f"    {'ABCD'[i]}. { answerOptions[i]}\n")
+        quizFile.write('\n')
 
-        #TODO: Write the answer key to a file.
 
+        # Write the answer key to a file.
+        answerKeyFile.write(f"{questionNum +1}. {'ABCD'[answerOptions.index(correctAnswer)]}")
+    
+    quizFile.close()
+    answerKeyFile.close()
         
 
