@@ -63,9 +63,9 @@ for quizNum in range(35):
     answerKeyFile = open(f'capistalsquiz_answers{quizNum + 1}.txt','w')
 
     # Write out the header for the quiz.
-    quizNum.Write("Name:\n\nDate:\n\nPeriod\n\n")
-    quizNum.Write((" " *20) + f'State Capitals Quiz (Form{quizNum +1})')
-    quizFile.Write("\n\n")
+    quizFile.write("Name:\n\nDate:\n\nPeriod\n\n")
+    quizFile.write((" " *20) + f'State Capitals Quiz (Form{quizNum +1})')
+    quizFile.write("\n\n")
 
     # Shuffle the order of the states.
     states = list(capitals.keys())
@@ -76,7 +76,7 @@ for quizNum in range(35):
 
         #Get right and wrong answers.
         correctAnswer = capitals[states[questionNum]]
-        wrongAnswers - list(capitals.values())
+        wrongAnswers = list(capitals.values())
         del wrongAnswers[wrongAnswers.index(correctAnswer)]
         wrongAnswers = random.sample(wrongAnswers,3)
         answerOptions = wrongAnswers + [correctAnswer]
